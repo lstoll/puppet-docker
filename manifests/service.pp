@@ -9,8 +9,8 @@ class docker::service(
   $user = undef,
 ) {
 
-  $service_ensure = $ensure ? {
-    present => running,
+  $service_ensure = $enable ? {
+    true => running,
     default => stopped,
   }
 
